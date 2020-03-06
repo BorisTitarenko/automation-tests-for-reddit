@@ -4,7 +4,7 @@ public class PostDataProvider {
     @DataProvider(name = "postWithImageDataProvider")
     public Object[][] getTextAndImage(){
         Object[][] objects = {{ "Title", "Body text $",
-                "E:\\course_java\\studying\\4\\redditTestModification\\src\\test\\resources\\cat.jpg"}};
+                "../resources/cat.jpg"}};
         return objects;
     }
 

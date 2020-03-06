@@ -1,5 +1,4 @@
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
 import static org.testng.Assert.*;
 import org.testng.annotations.*;
 

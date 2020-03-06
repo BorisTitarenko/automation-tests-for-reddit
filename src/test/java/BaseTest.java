@@ -1,4 +1,3 @@
-import okio.Options;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,13 +21,13 @@ public class BaseTest {
     @BeforeTest
     public void setupDriver() {
         properties = new Properties();
-        try(InputStream inputStream = new FileInputStream("E:\\course_java\\studying\\4\\redditTestModification\\config.properties")) {
+        try(InputStream inputStream = new FileInputStream("./config.properties")) {
             properties.load(inputStream);
         }catch (IOException exception){
             exception.printStackTrace();
         }
-        System.setProperty("webdriver.gecko.driver", "E:\\java\\geckodriver\\geckodriver.exe");
-        System.setProperty("webdriver.chrome.driver", "E:\\java\\chromedriver\\chromedriver.exe");
+        //System.setProperty("webdriver.gecko.driver", "E:\\java\\geckodriver\\geckodriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "E:\\java\\chromedriver\\chromedriver.exe");
 
     }
 
@@ -50,7 +49,7 @@ public class BaseTest {
             capabilities.setCapability(FirefoxDriver.PROFILE, profile);
             driver = new FirefoxDriver(capabilities);
         }
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
 
